@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://di7xyvbqcwbg4"]
+
+[ext_resource type="PackedScene" uid="uid://qgdnbqau3dlv" path="res://scenes/player.tscn" id="1_eodek"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vijd7"]
+size = Vector2(1181, 20)
+
+[node name="Main" type="Node"]
+
+[node name="Systems" type="Node" parent="."]
+
+[node name="World" type="Node2D" parent="."]
+
+[node name="Player" parent="World" instance=ExtResource("1_eodek")]
+position = Vector2(-486, 0)
+
+[node name="Camera2D" type="Camera2D" parent="World"]
+
+[node name="roof" type="Area2D" parent="World"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/roof"]
+position = Vector2(1.5, -335)
+shape = SubResource("RectangleShape2D_vijd7")
+
+[node name="floor" type="Area2D" parent="World"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/floor"]
+position = Vector2(1.5, 337)
+shape = SubResource("RectangleShape2D_vijd7")
